@@ -13,7 +13,7 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-		
+		<script src="https://code.highcharts.com/highcharts.js"></script>
 		<script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
@@ -79,6 +79,8 @@
 				 </div>
 						</section>
 					</div>
+					<div id="container" style="width:100%; height:400px;"></div>
+
 
 
 	</body>
@@ -127,4 +129,43 @@ $(document).ready(function(){
 				        }); // end .getJSON
 				     }); // end button
 				});
+
+
+				$(function () {
+    var myChart = Highcharts.chart('container', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+});
+var chart1; // globally available
+$(function() {
+       chart1 = Highcharts.stockChart('container', {
+         rangeSelector: {
+            selected: 1
+         },
+         series: [{
+            name: 'USD to EUR',
+            data: usdtoeur // predefined JavaScript array
+         }]
+      });
+   });
 				</script>
