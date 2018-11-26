@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Performance</title>
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+           <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
+           <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+           <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+           <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+           <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <br /><br />
+          <div class="container">
+               <h1 align="center"> 2016 -2017 KPI </h3><br />
+               <h3 align="center"> Parent Company</h3><br />
+               <table id="data-table" class="table table-bordered">
+                    <thead>
+                         <tr>
+                           <th>Parent company</th>
+                              <th>Holding brands</th>
+                              <th>Revenue for 2017 (billion)</th>
+                              <th>Revenue for 2016 (billion)</th>
+                              <th>Total revenue (public available)</th>
+                              <th>Perfume brand</th>
+                              <th>Estimated revenue 2018 (billion) </th>
+                              <th>Net earnings for 2017 </th>
+                              <th>Major market</th>
+                            </tr>
+                          </thead>
+                        </table>
+                <div id="chart"></div>
+           </div>
+       </body>
+</html>
+
+<script>
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appokzheUYyuQbtH3/brands_performances?api_key=keypXm0HHxjEx6JHg";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Parent_company);
+                      items.push(value.fields.Holding_brands);
+                      items.push(value.fields.Revenue_2017_billion);
+                       items.push(value.fields.Revenue_2016_billion);
+                       items.push(value.fields.Total_revenue_public_available_copy);
+                       items.push(value.fields.Perfume_brand_copy);
+                       items.push(value.fields.Estimated_revenue_2018_copy);
+                       items.push(value.fields.Net_earnings_2017);
+                       items.push(value.fields.Major_market);
+                       dataSet.push(items);
+                }); // end .each
+
+                $('#data-table').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Parent company",
+                       defaultContent:""},
+                     { title: "Holding brands",
+                       defaultContent:"" },
+                     { title: "Revenue for 2017 (billion)",
+                       defaultContent:""},
+                     { title: "Revenue for 2016 (billion)",
+                       defaultContent:""},
+                       { title: "Total revenue (public available)",
+                         defaultContent:""},
+                         {title:"Perfume brand",
+                         defaultContetn:""},
+                         { title: "Estimated revenue 2018 (billion)",
+                           defaultContent:""},
+                           { title: "Net earnings for 2017",
+                             defaultContent:""},
+                             { title: "Major market",
+                               defaultContent:""},
+
+
+
+                 ]
+
+        }); // end .getJSON
+     }); // end button
+});
+</script>

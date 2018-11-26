@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
+  <script src='scriptlib.js'></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css"
+  </head>
+
+
+<style>
+
+html {
+  background: url(background.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+h1 {
+   text-align: left;
+   font-weight: bold;
+   color: grey;
+   font-size: 15px;
+ }
+ </style>
+
+<body>
+ <h1> Below is the chart which shows the number of collections that each perfume brand produced, check it out!</h1>
+  <div id="chart"></div>
+   </div>
+ <iframe class="airtable-embed" src="https://airtable.com/embed/shrEQMNzAnSRjWad5?backgroundColor=cyan&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+ </body>
+  </html>
+  <script>
+  var chart = c3.generate({
+    binto: '#chart',
+          data: {
+              columns: [
+                ['Chanel',13],
+                ['Chloe', 3],
+                ['Dior',14],
+                ['Diptyque',5],
+                ['Guerlain',24],
+                ['Hermes',15],
+                ['Jo Malone', 9],
+                ['Le Labo',17]
+              ],
+              type: 'bar'
+           
+
+            }
+          });
+      
+        </script>
+
+
+
+
+
+
+
+
+ 

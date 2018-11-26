@@ -1,0 +1,83 @@
+<html>
+<head>
+
+
+  <title>Explore origins...</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="leaflet.css">
+  <link rel="shortcut icon" href="">
+  <script src="leaflet.js"></script>
+  <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
+  </head>
+  <style>
+  html {
+    background: url(background.jpg) no-repeat center fixed;
+    background-size: cover;
+  }
+  h1 {
+    font-style: italic;
+    color: grey;
+    font-weight: 300;
+    font-family: "Arial",sans-serif;
+    text-align: left;
+  }
+
+
+  </style>
+
+
+
+
+
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <h1>Explore origins...</h1>
+      <button type="button" class="btn btn-info" id='roll_up' onclick="where_they_founded();">Where they founded ?</button><br>
+
+      <div id="map" style="width: 1000px; height: 440px; border: 1px solid #AAA; position: center"></div>
+
+    </div>
+  </div>
+</div>
+<script>
+    var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,})
+
+
+    var map= L.map('map')
+          .addLayer(mapboxTiles)
+          .setView([47,2], 14);
+
+
+    var items = [];
+    var airtable_read_endpoint = "https://api.airtable.com/v0/appokzheUYyuQbtH3/map?api_key=keypXm0HHxjEx6JHg";
+    var data = [];
+    $.getJSON(airtable_read_endpoint, function(result) {
+           $.each(result.records, function(key,value) {
+               items = {};
+                   items["name"] = value.fields.Name;
+                   items["url"] = value.fields.url;
+                   items["image_url"] = value.fields.image_url;
+                   items["latitud"] = value.fields.Lat;
+                   items["longitud"] = value.fields.Lng;
+                   data.push(items);
+                   console.log(items);
+            }); // end .each
+    }); // end getJSON
+</script>
+<script>
+function where_they_founded(){
+
+  for (var i in data) {
+      var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
+      L.marker( latlng )
+          .bindPopup( '<a href="' + data[i].url + '" target="_blank">' + '<img src="' + data[i].image_url+'" width = "80px"><br>'+data[i].name + '</a>' )
+          .addTo(map);
+  }
+}
+</script>
+</body>
+</html>

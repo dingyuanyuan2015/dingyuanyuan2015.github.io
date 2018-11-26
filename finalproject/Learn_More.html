@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Learn More</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+	</head>
+	<body>
+
+	<!-- Header -->
+		<div id="header">
+			<div id="nav-wrapper">
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="About.html">About</a></li>
+						<li class="active"><a href="Learn_More.html">Learn More</a></li>
+						<li><a href="Contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="container">
+
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="#">Learn More</a></h1>
+					<span class="tag">KPI lists</span>
+				</div>
+			</div>
+		</div>
+	<!-- Header -->
+
+	<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row">
+
+					<!-- Content -->
+					<div id="content" class="8u skel-cell-important">
+						<section>
+							<header>
+								<h2>Ranking/Subject/Tuition</h2>
+								</header>
+								<br /><br />
+							 <div class="container">
+								 <table id="data-table" class="table table-bordered">
+									 <thead>
+                    <tr>
+											<th> Name </th>
+											<th> QS World University 2019 </th>
+											<th> Times Higher Education 2019 </th>
+											<th> US News 2019 </th>
+											<th> Average Ranking </th>
+											<th> Strong Subject </th>
+											<th> Tuition </th>
+										</tr>
+												</thead>
+											</table>
+							<div id="chart"></div>
+				 </div>
+						</section>
+					</div>
+
+					<!-- Sidebar -->
+
+	<!-- /Main -->
+
+	<!-- Tweet -->
+		
+
+
+
+
+	</body>
+</html>
+
+<script>
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appIh6e1Vbxi7u4lI/ranking?api_key=keypXm0HHxjEx6JHg";
+				var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+									 items.push(value.fields.Name);
+                      items.push(value.fields.QS_World_University_2019);
+                      items.push(value.fields.Times_Higher_Education_2019);
+                       items.push(value.fields.US_News_2019);
+                       items.push(value.fields.Average_Ranking_Copy);
+                       items.push(value.fields.Strong_Subject);
+                       items.push(value.fields.Tuition_Copy);
+                       dataSet.push(items);
+                }); // end .each
+								$('#data-table').DataTable( {
+				                 data: dataSet,
+				                 retrieve: true,
+				                 columns: [
+				                     { title: "Name",
+				                       defaultContent:""},
+				                     { title: "QS World University 2019",
+				                       defaultContent:"" },
+				                     { title: "Times Higher Education 2019",
+				                       defaultContent:""},
+				                     { title: "US News 2019",
+				                       defaultContent:""},
+				                       { title: "Average Ranking",
+				                         defaultContent:""},
+				                         {title:"Strong Subject",
+				                         defaultContetn:""},
+				                         { title: "Tuition",
+				                           defaultContent:""},
+
+
+				                 ]
+
+				        }); // end .getJSON
+				     }); // end button
+				});
+				</script>
