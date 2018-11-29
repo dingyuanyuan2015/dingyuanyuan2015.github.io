@@ -284,6 +284,8 @@
     var map = L.map('map')
           .addLayer(mapboxTiles)
 					.setView([40.915000, -73.124000], 3);
+
+     var data=[];
 					var items = [];
 			    var airtable_read_endpoint = "https://api.airtable.com/v0/appIh6e1Vbxi7u4lI/map?api_key=keypXm0HHxjEx6JHg&maxRecords=12&view=Grid%20view"
 					$.getJSON(airtable_read_endpoint, function(result) {
