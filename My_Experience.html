@@ -200,17 +200,17 @@
  	</div>
 	<div class="mySlides">
 	 <div class="numbertext">5 / 15</div>
-	 <img src="https://dl.airtable.com/uvAOOYDeQ8i1FXzLGC90_mit.jpg" style="height:400px;width:100%">
+	 <img src="https://dl.airtable.com/uvAOOYDeQ8i1FXzLGC90_mit.jpg" style="height:100%;width:100%">
 	 <div class="text">My Travell: Me in MIT</div>
 	</div>
 	<div class="mySlides">
 	 <div class="numbertext">6 / 15</div>
-	 <img src="https://dl.airtable.com/8tnTTEmiSACNKEcfu2jx_harvard.jpg" style="height:400px;width:100%">
+	 <img src="https://dl.airtable.com/8tnTTEmiSACNKEcfu2jx_harvard.jpg" style="height:100%;width:100%">
 	 <div class="text">Me in Harvard University</div>
 	</div>
 	<div class="mySlides">
  		<div class="numbertext">7 / 15</div>
- 		<img src="https://dl.airtable.com/2fdYOl61RzOUztS0a8zA_uop.jpg" style="height:400px;width:100%">
+ 		<img src="https://dl.airtable.com/KKDDXnL8Q46XUATnmdNz_uop.jpg" style="height:400px;width:100%">
  		<div class="text">Me in University of Pennsylvania</div>
  	 </div>
 
@@ -241,13 +241,13 @@
 
 	<div class="mySlides">
 	 <div class="numbertext">12 / 15</div>
-	 <img src="https://dl.airtable.com/FHqfD1PWQdKNUZBpcyNm_chicago.jpg" style="height:400px;width:100%">
+	 <img src="https://dl.airtable.com/FHqfD1PWQdKNUZBpcyNm_chicago.jpg" style="height:600px;width:100%">
 	 <div class="text">Me in Chicago</div>
 	</div>
 
 	<div class="mySlides">
 	 <div class="numbertext">13 / 15</div>
-	 <img src="https://dl.airtable.com/v8G50ABeQHGuhPwaku48_lasvegas.jpg" style="height:400px;width:100%">
+	 <img src="https://dl.airtable.com/oyrOQRxuRKG0CqhKRZyQ_las.jpeg" style="height:100%;width:100%">
 	 <div class="text">Me in Las Vegas</div>
 	</div>
 
@@ -280,12 +280,12 @@
 	<br>
 <div id="map" style="width: 780px; height: 440px; border: 1px solid #AAA;"></div>
 		 <script>
-    var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,})
+   var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,})
     var map = L.map('map')
           .addLayer(mapboxTiles)
-					.setView([40.915000, -73.124000], 3);
+					.setView([40.915000, -73.124000], 4);
 
-     var data=[];
+       var data=[];
 					var items = [];
 			    var airtable_read_endpoint = "https://api.airtable.com/v0/appIh6e1Vbxi7u4lI/map?api_key=keypXm0HHxjEx6JHg&maxRecords=12&view=Grid%20view"
 					$.getJSON(airtable_read_endpoint, function(result) {
@@ -303,10 +303,11 @@
 <script>
 function Track_My_Journey(){
   for (var i in data) {
-      var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
+       var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
       L.marker( latlng )
-          .bindPopup( '<a href="' + data[i].url + '" target="_blank">'+data[i].name + '</a>' )
+			   .bindPopup( '<a href="' + data[i].url + '" target="_blank">'+data[i].name + '</a>' )
           .addTo(map);
+			
   }
 }
 </script>
@@ -413,7 +414,7 @@ function showSlides(n) {
 		<div id="tweet">
 			<div class="container">
 				<section>
-					<blockquote>&ldquo;In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat.&rdquo;</blockquote>
+					<blockquote>&ldquo;"Expanding Your Horizons"&rdquo;</blockquote>
 				</section>
 			</div>
 		</div>
