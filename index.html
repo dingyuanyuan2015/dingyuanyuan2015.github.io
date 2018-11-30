@@ -32,6 +32,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -43,25 +44,74 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
 		<style>
-		.btn{
-			font-size: 45px;
-			font-family: Times,sans-serif;
-			background-color: SandyBrown;
-			color:Grey;
-			font-weight: bold;
-			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-			border-radius: 12px;
-		}
-
-
-
-.size {
-	font-size: 25px;
-	font-family: Times,monospace;
-
+		h4{
+  color: white;
+  font-family: arial;
+  display: center;
+  text-align: center;
+  vertical-align: middle;
+}
+.scroll-down {
+ opacity: 1;
+ -webkit-transition: all .5s ease-in 3s;
+ transition: all .5s ease-in 3s;
 }
 
-		</style>
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  transform: scale(1)
+}
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+</style>
+
 	</head>
 
 	<body class="homepage">
@@ -86,9 +136,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 				<div id="logo">
 					<h1><a href="#">Far Beyond</a></h1>
 					<span class="tag">By Renee</span>
+
+
+
 				</div>
 			</div>
-		</div>
+
+    <section>
+
+		<a href="#explore" class="scroll-down" address="true" ></a>
+	</section>
+	</div>
+
+
 
 	<!-- Featured -->
 		<div id="featured">
@@ -98,26 +158,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 				</header>
 				<p>This is <strong>Far Beyond</strong>, a site created by CUHK student, Yuanyuan Ding </p>
-					<p> This is all about foreign university things you may want to explore, hope you will enjoy...</p>
+					<p> This is all about foreign university things you may want to explore, and hope you will enjoy...</p>
 			<hr/>
+			<section id="explore"><a href='https://dingyuanyuan2015.github.io/' target='_blank'></a></section>
+			<div class="row">
+								<section class="4u">
+									<span class="pennant"><span class="fa fa-bank"></span></span>
+									<h3>Backgrounds</h3>
+									<p>Check out the basic information before you are ready.</p>
+									<a href="https://dingyuanyuan2015.github.io/About.html" class="button button-style1">Find More</a>
+								</section>
+								<section class="4u">
+									<span class="pennant"><span class="fa fa-bar-chart"></span></span>
+									<h3>Performances</h3>
+									<p> Pre-acknowledge the most significant statistics before you apply. </p>
+									<a href="https://dingyuanyuan2015.github.io/Learn_More.html" class="button button-style1">Find More</a>
+								</section>
+								<section class="4u">
+									<span class="pennant"><span class="fa fa-plane"></span></span>
+									<h3>Insights</h3>
+									<p>Explore my overseas study experience before you ask question.</p>
+									<a href="https://dingyuanyuan2015.github.io/My_Experience.html" class="button button-style1">Find More</a>
+								</section>
 
-				<button type="button" class="btn btn-warning" onclick="myFunction()" onmouseover="" style="cursor: pointer;">Consult Me</button>
-				<p id="contact" style="padding-top:20px"></p>
-
-				<script>
-       function myFunction() {
-      document.getElementById("contact").innerHTML = "<span class='size'>Tel:(+852)60464945<br> Email:reneeooo95@gmail.com</span>";
-
-}
+							</div>
+						</div>
+					</div>
 
 
-
-
-
-  </script>
-
-				</div>
-			</div>
 
 
 	<!-- Main -->
@@ -130,14 +198,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 						<header>
 							<h2>Lioyd Blankfein</h2>
 						</header>
-						<p>CEO of Goldman Sachs. Graduated from Harvard University </p>
+						<p>CEO of Goldman Sachs. Graduated from <a href="https://alumni.harvard.edu/blankfein"<span style="color:darkSlateGrey;"><u>Harvard University</u></span></a></p>
 					</section>
 					<section class="6u">
 						<a href="#" class="image full"><img src="images/mitalumni.jpg" alt=""></a>
 						<header>
 							<h2>Kofi Annan</h2>
 						</header>
-						<p>The former Secretary General of the United Nations. Graduate from Massachusetts Institute of Technology (MIT) </p>
+						<p2>The former Secretary General of the United Nations. Graduate from <a href= "http://mitsloan.mit.edu/fellows/leadership-blog/kofi-annan-sf-72-the-conscience-of-humanity/"  <span style="color:darkSlateGrey;"> <u> Massachusetts Institute of Technology (MIT)</u></span></a></p>
 					</section>
 				</div>
 
@@ -147,14 +215,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 						<header>
 							<h2>Rowan Atkinson</h2>
 						</header>
-						<p>"Mr Bean". English actor, comedian and screenwriter. Graduated from University of Oxford</p>
+						<p>"Mr Bean". English actor, comedian and screenwriter. Graduated from <a href= "https://www.queens.ox.ac.uk/people/mr-rowan-atkinson" <span style = "color:darkSlateGrey;"><u>University of Oxford </u></span></a></p>
 					</section>
 					<section class="6u">
 						<a href="#" class="image full"><img src="images/cambridgealumni.jpg" alt=""></a>
 						<header>
 							<h2>Tom Hiddleston</h2>
 						</header>
-						<p>English actor, film producer and musician. Graduated from University of Cambridge</p>
+						<p>English actor, film producer and musician. Graduated from <a href = "https://www.pem.cam.ac.uk/alumni-development/news/tom-hiddleston-1999-wears-the-hollow-crown" <span style="color:darkSlateGrey;"><u>University of Cambridge</u></span></a></p>
 					</section>
 				</div>
 
@@ -179,10 +247,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 						<span class="byline">Please support us from the below...</span>
 					</header>
 					<ul class="contact">
-						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-						<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-						<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
-						<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
+						<li><a href="https://twitter.com/?lang=en" class="fa fa-twitter"><span>Twitter</span></a></li>
+						<li class="active"><a href="https://www.facebook.com/" class="fa fa-facebook"><span>Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/" class="fa fa-instagram"><span>Instagram</span></a></li>
+						<li><a href="https://www.tumblr.com/" class="fa fa-tumblr"><span>Google+</span></a></li>
 					</ul>
 				</section>
 			</div>
