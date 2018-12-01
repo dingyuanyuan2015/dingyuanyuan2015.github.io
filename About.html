@@ -22,19 +22,15 @@
     margin: 5px;
 		border: 1px;
 		float:left;
-
-
     width: 113px;
+		position: static;
 
-}
-
-div.gallery:hover {
-    border: 1px solid #777;
 }
 
 div.gallery img {
     width:110px;
     height: 100px;
+
 }
 
 div.desc {
@@ -84,12 +80,27 @@ div.desc {
 
 /* Style the back side */
 .flip-box-back {
-  background-color: grey;
+  background-color:LIGHTGREY;
   color: black;
   transform: rotateY(180deg);
 }
 
+p1{
+	position:absolute;
+  font-size: 20px;
+	top: 40%;
+	left:10%;
 
+}
+
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 
 
@@ -108,7 +119,7 @@ div.desc {
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Homepage</a></li>
-						<li class="active"><a href="About.html">About</a></li>
+						<li class="active"><a href="About.html">About University</a></li>
 						<li><a href="Learn_More.html">Learn More</a></li>
 
 						<li><a href="My_Experience.html">My Experience</a></li>
@@ -159,24 +170,24 @@ div.desc {
 
               <section>
                  <header>
-								<h2>Insights</h2>
+								<h2>Dedication</h2>
 							</header>
                <ul class="style">
 								<li>
 									<p class="posted">Vision Statement</p>
-									<p><a href="#">"To be recognised as delivering world class facilities that support world class research, teaching and learning" -- University of Oxford</a></p>
-									<p><a href="#"> "Imperial College embodies and delivers world class scholarship, education and research in science, engineering, medicine and business, with particular regard to their application in industry, commerce and healthcare.
+									<p><a href="https://www.facebook.com/the.university.of.oxford/">"To be recognised as delivering world class facilities that support world class research, teaching and learning" -- University of Oxford</a></p>
+									<p><a href="https://www.instagram.com/imperialcollege/?hl=en"> "Imperial College embodies and delivers world class scholarship, education and research in science, engineering, medicine and business, with particular regard to their application in industry, commerce and healthcare.
                                   We foster multidisciplinary working internally and collaborate widely externally" -- Imperial College London </a></p>
 								</li>
 								<li>
-									<p class="posted">Guess?</p>
+									<p class="posted">Guess:What is this place?</p>
 									<div class="flip-box">
 									 <div class="flip-box-inner">
 							 <div class="flip-box-front">
 							 <img src="https://dl.airtable.com/bq88JQAwRy6YXdlksBP8_sf.jpg" style="width:300px;height:200px">
 								</div>
 						<div class="flip-box-back">
-					  <p>California, Stanford University</p>
+					  <p1>California, Stanford University </p1>
 						 </div>
 						</div>
 							</div>
@@ -195,22 +206,28 @@ div.desc {
 									<span class="byline">Discover the oldest to the newest</span>
                  </header>
 
+
 								 <div class="gallery">
+
                  <a href="http://www.ox.ac.uk/">
-                <img src ="https://dl.airtable.com/zoElUnIZSvuaztjrkmDn_Screen%20Shot%202018-11-20%20at%201.02.01%20AM.png" width:"30" height = "30">
-                </a>
-           <div class="desc"> University of Oxford </br>
+
+
+                <img src ="https://dl.airtable.com/zoElUnIZSvuaztjrkmDn_Screen%20Shot%202018-11-20%20at%201.02.01%20AM.png"  class="hover-shadow cursor">
+
+									</a>
+							      <div class="desc"> University of Oxford </br>
 						                  UK 1096 </br>
 															Public </br>
 
 															Acceptance Rate: 18.9% </br>
                             </div>
-                            </div>
+
+													</div>
 
 
 						<div class="gallery">
 						<a href="https://www.cam.ac.uk/">
-						<img src ="https://dl.airtable.com/GbUTtWaAS5uX6XRtkacw_Screen%20Shot%202018-11-20%20at%201.00.08%20AM.png" width:"60" height = "60">
+						<img src ="https://dl.airtable.com/GbUTtWaAS5uX6XRtkacw_Screen%20Shot%202018-11-20%20at%201.00.08%20AM.png"  class="hover-shadow cursor">
 						</a>
 						<div class="desc">
 							University of Cambridge </br>
@@ -223,7 +240,7 @@ div.desc {
 
 						<div class="gallery">
 						<a href="https://www.ed.ac.uk/ ">
-						<img src ="https://dl.airtable.com/au0WHAkQl6TiD3GWVPGt_Screen%20Shot%202018-11-20%20at%2012.57.24%20AM.png" width:"60" height = "60">
+						<img src ="https://dl.airtable.com/au0WHAkQl6TiD3GWVPGt_Screen%20Shot%202018-11-20%20at%2012.57.24%20AM.png"  class="hover-shadow cursor">
 						</a>
 						<div class="desc"> The University of Edinburgh </br>
 						UK 1582</br>
@@ -235,7 +252,7 @@ div.desc {
 
 						<div class="gallery">
 						<a href=" https://www.harvard.edu/ ">
-						<img src ="https://dl.airtable.com/GnpdU9AiStCHJoucUZUZ_Screen%20Shot%202018-11-20%20at%2012.51.39%20AM.png" width:"60" height = "60">
+						<img src ="https://dl.airtable.com/GnpdU9AiStCHJoucUZUZ_Screen%20Shot%202018-11-20%20at%2012.51.39%20AM.png"  class="hover-shadow cursor">
 						</a>
 						<div class="desc"> Harvard University </br>
 						U.S. 1636</br>
@@ -251,7 +268,7 @@ div.desc {
 
 						<div class="gallery">
 						<a href=" https://www.yale.edu/ ">
-							<img src =" https://dl.airtable.com/cx90aQ0jR0ijVDLsWIWw_Screen%20Shot%202018-11-20%20at%2012.52.48%20AM.png" width:"60" height = "60">
+							<img src =" https://dl.airtable.com/cx90aQ0jR0ijVDLsWIWw_Screen%20Shot%202018-11-20%20at%2012.52.48%20AM.png" class="hover-shadow cursor">
 							</a>
 
 
@@ -266,7 +283,7 @@ div.desc {
 
 						<div class="gallery">
 							<a href=" https://www.upenn.edu/">
-					  <img src= "https://dl.airtable.com/cCJKwICKQtyIXfuc0Af8_Screen%20Shot%202018-11-20%20at%2012.56.46%20AM.png" width="60" height="60" >
+					  <img src= "https://dl.airtable.com/cCJKwICKQtyIXfuc0Af8_Screen%20Shot%202018-11-20%20at%2012.56.46%20AM.png" class="hover-shadow cursor" >
 						</a>
               <div class="desc">  University of Pennsylvania </br>
 									    U.S. 1740 <br>
@@ -278,7 +295,7 @@ div.desc {
 
 						<div class="gallery">
 							<a href=" https://www.columbia.edu/ ">
-						<img src= "https://dl.airtable.com/YfJKtJb8TFGn6VOuHh1p_Screen%20Shot%202018-11-20%20at%2012.48.46%20AM.png" width="60" height="60" >
+						<img src= "https://dl.airtable.com/YfJKtJb8TFGn6VOuHh1p_Screen%20Shot%202018-11-20%20at%2012.48.46%20AM.png" class="hover-shadow cursor" >
 									</a>
 			              <div class="desc"> Columbia  University </br>
 												    U.S. 1754 <br>
@@ -290,7 +307,7 @@ div.desc {
 
 							<div class="gallery">
 							<a href="https://umich.edu/">
-					<img src= "https://dl.airtable.com/PtHIOIRsR92RSVLP7Lh4_Screen%20Shot%202018-11-20%20at%2012.56.12%20AM.png" width="60" height="60" >
+					<img src= "https://dl.airtable.com/PtHIOIRsR92RSVLP7Lh4_Screen%20Shot%202018-11-20%20at%2012.56.12%20AM.png" class="hover-shadow cursor" >
 								</a>
 							<div class="desc"> University of Michigan </br>
 							 U.S. 1817 <br>
@@ -303,7 +320,7 @@ div.desc {
 
 								<div class="gallery">
 								<a href="https://www.manchester.ac.uk/">
-						<img src= "https://dl.airtable.com/lKPCyqoSsC5mn03RwtEA_Screen%20Shot%202018-11-20%20at%2012.58.54%20AM.png" width="60" height="60" >
+						<img src= "https://dl.airtable.com/lKPCyqoSsC5mn03RwtEA_Screen%20Shot%202018-11-20%20at%2012.58.54%20AM.png" class="hover-shadow cursor" >
 							</a>
 						<div class="desc"> The University of Manchester </br>
 						UK 1824 <br>
@@ -315,7 +332,7 @@ div.desc {
 
 								<div class="gallery">
 								<a href=" https://www.kcl.ac.uk/ ">
-							<img src= "https://dl.airtable.com/YUfJPn8pTNifrnKqvquC_Screen%20Shot%202018-11-20%20at%201.00.38%20AM.png" width="60" height="60" >
+							<img src= "https://dl.airtable.com/YUfJPn8pTNifrnKqvquC_Screen%20Shot%202018-11-20%20at%201.00.38%20AM.png"class="hover-shadow cursor" >
 							</a>
 							<div class="desc"> King's College London </br>
 							UK 1829 <br>
@@ -327,7 +344,7 @@ div.desc {
 
 						<div class="gallery">
 						<a href=" https://www.duke.edu/ ">
-					<img src= "https://dl.airtable.com/qxkCZ8D7Rx6lgPMM4v6w_Screen%20Shot%202018-11-20%20at%2012.55.36%20AM.png" width="60" height="60" >
+					<img src= "https://dl.airtable.com/qxkCZ8D7Rx6lgPMM4v6w_Screen%20Shot%202018-11-20%20at%2012.55.36%20AM.png" class="hover-shadow cursor">
 					</a>
 							<div class="desc"> Duke University </br>
 							U.S. 1838 <br>
@@ -339,7 +356,7 @@ div.desc {
 
            <div class="gallery">
 				  <a href=" https://www.uchicago.edu/ ">
-						<img src= "https://dl.airtable.com/13E59SU3Q2e2MHzgIGWp_Screen%20Shot%202018-11-20%20at%2012.54.00%20AM.png" width="60" height="60" >
+						<img src= "https://dl.airtable.com/13E59SU3Q2e2MHzgIGWp_Screen%20Shot%202018-11-20%20at%2012.54.00%20AM.png" class="hover-shadow cursor" >
 								</a>
 						<div class="desc"> University of Chicago </br>
 							U.S. 1856 <br>
@@ -351,7 +368,7 @@ div.desc {
 
 							<div class="gallery">
 						  <a href=" http://www.mit.edu/ ">
-								<img src= "https://dl.airtable.com/KzfWNWvQTVmG7tXKvA7g_Screen%20Shot%202018-11-20%20at%2012.50.11%20AM.png" width="60" height="60" >
+								<img src= "https://dl.airtable.com/KzfWNWvQTVmG7tXKvA7g_Screen%20Shot%202018-11-20%20at%2012.50.11%20AM.png" class="hover-shadow cursor" >
 										</a>
 								<div class="desc"> Massachusetts Institute of Technology (MIT) </br>
 									U.S. 1861 <br>
@@ -362,7 +379,7 @@ div.desc {
 									</div>
 									<div class="gallery">
 									<a href=" https://www.cornell.edu/ ">
-										<img src= "https://dl.airtable.com/uFGVtmb2RYyBbPGAoTBs_Screen%20Shot%202018-11-20%20at%2012.49.27%20AM.png" width="60" height="60" >
+										<img src= "https://dl.airtable.com/uFGVtmb2RYyBbPGAoTBs_Screen%20Shot%202018-11-20%20at%2012.49.27%20AM.png" class="hover-shadow cursor" >
 												</a>
 										<div class="desc"> Cornell University </br>
 											U.S. 1865 <br>
@@ -375,7 +392,7 @@ div.desc {
 
 											<div class="gallery">
 											<a href=" https://www.berkeley.edu/ ">
-												<img src= "https://dl.airtable.com/CTMTrtiRhWST5yiwW6xk_Screen%20Shot%202018-11-20%20at%2012.52.17%20AM.png" width="60" height="60" >
+												<img src= "https://dl.airtable.com/CTMTrtiRhWST5yiwW6xk_Screen%20Shot%202018-11-20%20at%2012.52.17%20AM.png" class="hover-shadow cursor" >
 														</a>
 												<div class="desc"> University of California, Berkeley (UCB) </br>
 													U.S. 1868 <br>
@@ -387,7 +404,7 @@ div.desc {
 
 													<div class="gallery">
 													<a href=" https://www.jhu.edu/ ">
-														<img src= "https://dl.airtable.com/smhchWSTAp4rkfWudhA0_Screen%20Shot%202018-11-20%20at%2012.53.26%20AM.png" width="60" height="60" >
+														<img src= "https://dl.airtable.com/smhchWSTAp4rkfWudhA0_Screen%20Shot%202018-11-20%20at%2012.53.26%20AM.png" class="hover-shadow cursor" >
 																</a>
 														<div class="desc"> Johns Hopkins University </br>
 															U.S. 1876 <br>
@@ -399,7 +416,7 @@ div.desc {
 
 															<div class="gallery">
 															<a href=" https://www.stanford.edu/ ">
-																<img src= "https://dl.airtable.com/9tzbglQSQEO00choq0RM_Screen%20Shot%202018-11-20%20at%2012.50.53%20AM.png" width="60" height="60" >
+																<img src= "https://dl.airtable.com/9tzbglQSQEO00choq0RM_Screen%20Shot%202018-11-20%20at%2012.50.53%20AM.png" class="hover-shadow cursor" >
 																		</a>
 																<div class="desc"> Stanford University </br>
 																	U.S. 1885 <br>
@@ -411,7 +428,7 @@ div.desc {
 
 																	<div class="gallery">
 																	<a href=" https://www.imperial.ac.uk/ ">
-																		<img src= "https://dl.airtable.com/FHewrWwrShCd41hw1Odn_Screen%20Shot%202018-11-20%20at%2012.58.16%20AM.png" width="60" height="60" >
+																		<img src= "https://dl.airtable.com/FHewrWwrShCd41hw1Odn_Screen%20Shot%202018-11-20%20at%2012.58.16%20AM.png" class="hover-shadow cursor" >
 																				</a>
 																		<div class="desc"> Imperial College London </br>
 																			UK 1888 <br>
@@ -482,13 +499,13 @@ div.desc {
 				<section>
 					<header>
 						<h2>Get in touch</h2>
-						<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+						<span class="byline">Please support us from below...</span>
 					</header>
 					<ul class="contact">
-						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-						<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-						<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
-						<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
+						<li><a href="https://twitter.com/?lang=en" class="fa fa-twitter"><span>Twitter</span></a></li>
+						<li class="active"><a href="https://www.facebook.com/" class="fa fa-facebook"><span>Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/" class="fa fa-instagram"><span>Instagram</span></a></li>
+						<li><a href="https://www.tumblr.com/" class="fa fa-tumblr"><span>Google+</span></a></li>
 					</ul>
 				</section>
 			</div>

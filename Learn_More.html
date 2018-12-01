@@ -4,6 +4,7 @@
 	<head>
 		<title>Learn More</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
@@ -40,6 +41,48 @@
 			padding-left: 40px;
 			padding-right: 80px;
 			}
+
+			.battle{
+		position: relative;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@-webkit-keyframes example {
+0%   {background-color:none; left:0px; top:0px;}
+25%  {background-color:none; left:60px; top:0px;}
+    50%  {background-color:none; left:200px; top:60px;}
+		75%  {background-color:none; left:0px; top:60px;}
+    100% {background-color:none; left:0px; top:0px;}
+
+
+	}
+
+	#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: steelBlue;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+
+
+
 		</style>
 	</head>
 	<body>
@@ -51,7 +94,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Homepage</a></li>
-						<li><a href="About.html">About</a></li>
+						<li><a href="About.html">About University</a></li>
 						<li class="active"><a href="Learn_More.html">Learn More</a></li>
 						<li><a href="My_Experience.html">My Experience</a></li>
 						<li><a href="Contact.html">Contact</a></li>
@@ -70,220 +113,329 @@
 	<!-- Header -->
 
 	<!-- Main -->
-		<div id="main">
-			<div class="container">
-				<div class="row">
+	<div id="main">
+		<div class="container">
+			<div class="row">
+				<section class="data_grid_area section-padding-80">
+			          <div class="container">
+			              <div class="row">
+			                  <div class="col-12 col-md-4 col-lg-3">
+			                      <div class="data_sidebar_area">
+
+			                        <!-- ##### Single Widget ##### -->
+			                        <div class="widget catagory mb-50">
+			                            <!-- Widget Title -->
+			                            <h6 class="widget-title mb-30">Datasets</h6>
+
+			                            <!--  Catagories  -->
+			                            <div class="catagories-menu">
+			                                <ul id="menu-content2" class="menu-content collapse show">
+			                                  <!-- Single Item -->
+			                                  <li data-toggle="collapse" data-target="#container">
+			                                      <a id="allbtn" href="#narrow"> Ranking/Subject/Tuition Tables</a>
+			                                  </li>
+			                                    <!-- Single Item -->
+			                                    <li data-toggle="collapse" data-target="#ranking">
+			                                        <a id="musicbtn" href="#container">2019/2018 Average Ranking Comparison By Region</a>
+			                                    </li>
 
 
-					<!-- Content -->
-					<div id="content" class="8u skel-cell-important">
-						<section>
-							<header>
-	           <h2>Ranking/Subject/Tuition</h2>
-
-								</header>
-								<br /><br />
+																					<li data-toggle="collapse" data-target="#comparison">
+			                                        <a id="musicbtn" href="#container1">Average Tution Comparison</a>
+			                                    </li>
 
 
-							 <div class="container">
-								 <div id="narrow" style="padding-left:30px;padding-right:80px">
-								 <table id="data-table" class="table table-bordered">
-									 <thead>
-                    <tr>
-											<th> Name </th>
-											<th> QS World University 2019 </th>
-											<th> Times Higher Education 2019 </th>
-											<th> US News 2019 </th>
-											<th> Average Ranking </th>
-											<th> Strong Subject </th>
-											<th> Tuition </th>
-										</tr>
-												</thead>
-											</table>
-							<div id="chart"></div>
-				 </div>
-			 </div>
-				 <div id="content" class="container">
-					 <section>
-
-						 <div id="container" style="width: 1050px; height: 400px; margin: 0 auto"></div>
-						 <div id="container1" style="width: 1050px;  height: 400px; margin:0 auto"></div>
+																				</ul>
+													</div>
+											</div>
 
 
-					 </section>
-						</section>
-					</div>
-				</div>
-			</div>
-			<div>
-				<script>
-				var chart1 = Highcharts.chart('container', {
-			    chart: {
-			        type: 'bar'
-			    },
-			    title: {
-			        text: 'Average Ranking Comparison by Region'
-			    },
-			    subtitle: {
-			        text: 'Source: Airtable'
-			    },
-			    xAxis: {
-			        categories: ['US', 'UK'],
-			        title: {
-			            text: null
-								}
-				},
-				yAxis: {
-						min: 0,
-						title: {
-								text: 'Counts',
-								align: 'high'
-						},
-						labels: {
-								overflow: 'justify'
-						}
-				},
-				tooltip: {
-						valueSuffix: ''
-				},
-				plotOptions: {
-			        bar: {
-			            dataLabels: {
-			                enabled: true
-			            }
-			        }
-			    },
-			    legend: {
-			        layout: 'vertical',
-			        align: 'right',
-			        verticalAlign: 'top',
-			        x: -40,
-							y: 80,
-			        floating: true,
-			        borderWidth: 1,
-			        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-			        shadow: true
-			    },
-			    credits: {
-			        enabled: false
-			    },
-			    series: [{
-			        name: 'Top 10',
-			        data: [5, 2]
-			    }, {
-			        name: 'Top 30',
-							data: [14,4]
-			    }, {
-			        name: 'Top 50',
-			        data: [14,6]
+										</div>
+								</div>
 
-			    }]
-			});
 
-	</script>
+								<div class="battle" ><img src="https://dl.airtable.com/Ql0buqmvSjy8uQWxekxT_battle.jpeg" style="height:250px;width:870px; border-radius:12px" /> </div>
+							</section>
 
 
 
-	<script>
-			var chart2 = Highcharts.chart('container1', {
-			 chart: {
-					 type: 'line'
-			 },
-			 title: {
-					 text: 'Tuition Comparison by Region'
-			 },
-			 subtitle: {
-					 text: 'Source: TopUniversities'
-			 },
-			 xAxis: {
-			 categories: ['10000<$<30000','30000<$<50000','$>50000'],
-			 title: {
-					 text: 'USD/YEAR'
-				 }
-				 },
-			yAxis: {
-			 title: {
-					 text: 'Amount'
-			 }
-			},
-
-			plotOptions: {
-			line: {
-				 dataLabels: {
-						 enabled: true
-				 },
-				 enableMouseTracking: false
-			}
-			},
-			series: [{
-			name: 'US',
-			data: [1, 4,  9]
-			}, {
-			name: 'UK',
-			data: [2, 4, 0]
-			}]
-			});
+								 <div id="content" class="8u skel-cell-important">
+								   <section>
+								   <header>
 
 
-			</script>
+								    </header>
+								    	<br /><br/>
 
 
-		</div>
-	</div>
+								    	<div class="container">
+								    		<div id="narrow" style="margin-left:-35px;margin-right:5px" >
+								    			<table id="data-table"  class="table table-bordered ">
+								    			<thead>
+								           <tr>
+								    		<th> Name </th>
+								    		<th> Strong Subject </th>
+								    		<th> Average Tuition </th>
+
+								    		<th> QS World University 2019 </th>
+								    	<th> Times Higher Education 2019 </th>
+								    		<th> U.S. News 2019 </th>
+								    		<th> Average Ranking  2019</th>
+								    	<th> QS World University 2018 </th>
+								    		<th> Times Higher Education 2018 </th>
+								    			<th> U.S. News 2018 </th>
+								    			<th> Average Ranking 2018</th>
+													<th> Minimum TOEFL</th>
+													<th> Minimum IELTS</th>
 
 
 
 
+								    										</tr>
+								    												</thead>
+								    											</table>
+								    							<div id="chart"></div>
+								    				 </div>
+								    			 </div>
+								    				 <div id="content" class="container">
+								    					 <section>
+
+								    						 <div id="container" style="width: 1050px; height: 400px; margin: 0 auto"></div>
+																  <div id="container1" style="width: 1050px;  height: 400px; margin:0 auto"></div>
+
+
+								    					 </section>
+								    						</section>
+								    					</div>
+								    				</div>
+								    			</div>
+								    			<div>
+								    				<script>
+								    				var chart1 = Highcharts.chart('container', {
+								    			    chart: {
+								    			        type: 'bar'
+								    			    },
+								    			    title: {
+								    			        text: 'Average Ranking (2018 & 2019) Comparison by Region'
+								    			    },
+								    			    subtitle: {
+								    			        text: 'Source: Airtable'
+								    			    },
+								    			    xAxis: {
+								    			        categories: ['US', 'UK'],
+								    			        title: {
+								    			            text: null
+								    								}
+								    				},
+								    				yAxis: {
+								    						min: 0,
+								    						title: {
+								    								text: 'Counts',
+								    								align: 'high'
+								    						},
+								    						labels: {
+								    								overflow: 'justify'
+								    						}
+								    				},
+								    				tooltip: {
+								    						valueSuffix: ''
+								    				},
+								    				plotOptions: {
+								    			        bar: {
+								    			            dataLabels: {
+								    			                enabled: true
+								    			            }
+								    			        }
+								    			    },
+								    			    legend: {
+								    			        layout: 'vertical',
+								    			        align: 'right',
+								    			        verticalAlign: 'top',
+								    			        x: -40,
+								    							y: 80,
+								    			        floating: true,
+								    			        borderWidth: 1,
+								    			        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+								    			        shadow: true
+								    			    },
+								    			    credits: {
+								    			        enabled: false
+								    			    },
+								    			    series: [{
+								    			        name: 'Top 10',
+								    			        data: [5, 2]
+								    			    }, {
+								    			        name: 'Top 30',
+								    							data: [14,5]
+								    			    }, {
+								    			        name: 'Top 50',
+								    			        data: [14,7]
+
+								    			    }]
+								    			});
+
+								    	</script>
 
 
 
-	</body>
-</html>
-
-<script>
-$(document).ready(function(){
-  var items = [];
-        var i = 0;
-        var airtable_read_endpoint = "https://api.airtable.com/v0/appIh6e1Vbxi7u4lI/ranking?api_key=keypXm0HHxjEx6JHg";
-				var dataSet = [];
-        $.getJSON(airtable_read_endpoint, function(result) {
-               $.each(result.records, function(key,value) {
-                   items = [];
-									 items.push(value.fields.Name);
-                      items.push(value.fields.QS_World_University_2019);
-                      items.push(value.fields.Times_Higher_Education_2019);
-                       items.push(value.fields.US_News_2019);
-                       items.push(value.fields.Average_Ranking_Copy);
-                       items.push(value.fields.Strong_Subject);
-                       items.push(value.fields.Tuition_Copy);
-                       dataSet.push(items);
-                }); // end .each
-								$('#data-table').DataTable( {
-				                 data: dataSet,
-				                 retrieve: true,
-				                 columns: [
-				                     { title: "Name",
-				                       defaultContent:""},
-				                     { title: "QS World University 2019",
-				                       defaultContent:"" },
-				                     { title: "Times Higher Education 2019",
-				                       defaultContent:""},
-				                     { title: "US News 2019",
-				                       defaultContent:""},
-				                       { title: "Average Ranking",
-				                         defaultContent:""},
-				                         {title:"Strong Subject",
-				                         defaultContetn:""},
-				                         { title: "Tuition",
-				                           defaultContent:""},
-
-
-				                 ]
-
-				        }); // end .getJSON
-				     }); // end button
-				});
 
 
 
-				</script>
+								    	<script>
+								    			var chart2 = Highcharts.chart('container1', {
+								    			 chart: {
+								    					 type: 'line'
+								    			 },
+								    			 title: {
+								    					 text: 'Tuition Comparison by Region'
+								    			 },
+								    			 subtitle: {
+								    					 text: 'Source: TopUniversities'
+								    			 },
+								    			 xAxis: {
+								    			 categories: ['10000<$<30000','30000<$<50000','$>50000'],
+								    			 title: {
+								    					 text: 'USD/YEAR'
+								    				 }
+								    				 },
+								    			yAxis: {
+								    			 title: {
+								    					 text: 'Amount'
+								    			 }
+								    			},
+
+								    			plotOptions: {
+								    			line: {
+								    				 dataLabels: {
+								    						 enabled: true
+								    				 },
+								    				 enableMouseTracking: false
+								    			}
+								    			},
+								    			series: [{
+								    			name: 'US',
+								    			data: [1, 4,  9]
+								    			}, {
+								    			name: 'UK',
+								    			data: [3, 4, 0]
+								    			}]
+								    			});
+
+
+								    			</script>
+
+													<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+													<script>
+													window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+													function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+   }
+</script>
+
+
+
+
+								    		</div>
+								    	</div>
+										</div>
+								    </div>
+								    		</footer>
+								    	</div>
+								    </div>
+
+
+
+
+
+
+
+
+								    	</body>
+								    </html>
+
+								    <script>
+								    $(document).ready(function(){
+								      var items = [];
+								            var i = 0;
+								            var airtable_read_endpoint = "https://api.airtable.com/v0/appIh6e1Vbxi7u4lI/ranking?api_key=keypXm0HHxjEx6JHg";
+								    				var dataSet = [];
+								            $.getJSON(airtable_read_endpoint, function(result) {
+								                   $.each(result.records, function(key,value) {
+								                       items = [];
+								    									 items.push(value.fields.Name);
+								    									 items.push(value.fields.Strong_Subject);
+								    									 items.push(value.fields.Tuition_Copy);
+
+								                      items.push(value.fields.QS_World_University_2019);
+								                      items.push(value.fields.Times_Higher_Education_2019);
+								                      items.push(value.fields.US_News_2019);
+								                      items.push(value.fields.Average_Ranking_2019_Copy);
+								    									items.push(value.fields.QS_World_University_2018);
+								                      items.push(value.fields.Times_Higher_Education_2018);
+								                      items.push(value.fields.US_News_2018);
+								                      items.push(value.fields.Average_Ranking_2018_Copy);
+																			items.push(value.fields.Min_TOEFL);
+																			items.push(value.fields.Min_IELTS);
+
+
+
+																	   dataSet.push(items);
+								                    }); // end .each
+								    								$('#data-table').DataTable( {
+								    				                 data: dataSet,
+								    				                 retrieve: true,
+								    				                 columns: [
+								    				                     { title: "Name",
+								    				                       defaultContent:""},
+								    															 {title:"Strong Subject",
+								    															 defaultContetn:""},
+								    															 { title: "Tuition",
+								    																 defaultContent:""},
+
+								                             { title: "QS World University 2019",
+								    				                       defaultContent:"" },
+								    				                     { title: "Times Higher Education 2019",
+								    				                       defaultContent:""},
+								    				                     { title: "U.S. News 2019",
+								    				                       defaultContent:""},
+								    				                       { title: "Average Ranking 2019",
+								    				                         defaultContent:""},
+								    																 { title: "QS World University 2018",
+								    																			defaultContent:"" },
+								    																		{ title: "Times Higher Education 2018",
+								    																			defaultContent:""},
+								    																		{ title: "U.S. News 2018",
+								    																			defaultContent:""},
+								    																			{ title: "Average Ranking 2018",
+								    																				defaultContent:""},
+																														{ title: "Minimum TOEFL",
+									    																				defaultContent:""},
+																															{ title: "Minimum IELTS",
+																																defaultContent:""},
+
+
+
+
+
+
+
+								    				                 ]
+
+								    				        }); // end .getJSON
+								    				     }); // end button
+								    				});
+
+
+
+								    				</script>
