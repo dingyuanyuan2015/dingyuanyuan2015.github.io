@@ -7,19 +7,22 @@
 
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
     <link href='https://fonts.googleapis.com/css?family=Times:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 		<script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
       <script src="https://code.highcharts.com/modules/data.js"></script>
-
-    <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+	  <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
@@ -179,15 +182,15 @@
 																 <button class="collapsible" >Average Ranking Comparison By Region (2018-2019)</button>
 										            <div class="content">
 
-								    						 <div id="container" style="width: 1200px; height: 400px; margin: 0 auto"></div>
+								    						 <div id="container" style="height: 400px; margin: 0 auto"></div>
 															 </div>
 															 <button class="collapsible" >Average Tution Comparison</button>
 															 <div class="content">
-																  <div id="container1" style="width: 1200px;  height: 400px; margin:0 auto"></div>
+																  <div id="container1" style=" height: 400px; margin:0 auto"></div>
 																</div>
 																<button class="collapsible" >Average Ranking Change (2018-2019)</button>
 																<div class="content">
-																 <div id="container2" style="min-width: 1200px; height: 400px; margin: 0 auto"></div>
+																 <div id="container2" style="height: 400px; margin: 0 auto"></div>
 																 <table id="datatable" >
 																	<thead>
 				 <tr>

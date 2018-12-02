@@ -26,13 +26,19 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" />
 </noscript>
-		<style>
+<style>
 		* {box-sizing: border-box}
 	body {font-family: "Times New Roman", sans-serif; margin:0}
 	.mySlides {display: none}
 	img {vertical-align: middle;}
-	html, body, .container, #map {
+
+	body {
+	        padding: 0;
+	        margin: 0;
+	      }
+	html, body, .container1, .row, .col-xs-12, .col-sm-12, .col-md-12, #map {
         height: 100%;
+
       }
 
 	/* Slideshow container */
@@ -136,7 +142,7 @@
 
 .btn {
 	background-color: #BFDCC6;
-	
+
 
 	color:Grey;
 }
@@ -155,8 +161,8 @@
 
 
 		.airtable-embed {
-			height:442px;
-			margin-top: 14px;
+			height:440px;
+			margin-top: -32px;
 		}
 
 
@@ -239,7 +245,9 @@
 		#myBtn:hover {
 		background-color: #555;
 		}
-
+ h2{
+	 padding-top: 50px;
+ }
 
 
 
@@ -423,13 +431,13 @@
 
 
 
-<div class="container">
+<div class="container1">
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-12">
 
 	<button type="button" class="btn btn-warning" id='roll_up' style="margin-bottom:15px" onclick="Track_My_Journey();">Track My Journey</button>
 	<br>
-<div id="map" style="width: 780px; height: 440px; border: 1px solid #AAA;"></div>
+<div id="map" style="width: 780px; height: 440px;border:1px solid #AAA;"></div>
 		 <script>
    var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,})
     var map = L.map('map')
