@@ -773,7 +773,7 @@
 	#header
 	{
 		position: relative;
-		background: url(../images/bg.gif) no-repeat bottom center;
+		background: url(../images/header.gif) no-repeat bottom center;
 		background-attachment: fixed;
 		background-size: cover;
 		text-align: center;
@@ -895,7 +895,7 @@
 	{
 		position: relative;
 		background: #fff;
-		
+
 	}
 
 	.homepage #content

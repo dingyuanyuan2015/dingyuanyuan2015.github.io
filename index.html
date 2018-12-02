@@ -33,14 +33,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Times:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style.css"/>
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
 		<style>
@@ -114,6 +114,27 @@ h2{
 	font-style: italic;
 }
 
+.btn{
+  font-size: 30px;
+  font-family: Times,sans-serif;
+  background-color: SandyBrown;
+  color:Grey;
+  font-weight: bold;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+	margin-top: 25px;
+
+}
+
+
+
+.size {
+font-size: 18px;
+font-family: Times;
+color:#777;
+
+}
+
 </style>
 
 	</head>
@@ -130,7 +151,7 @@ h2{
 						<li><a href="About.html">About University</a></li>
 						<li><a href="learn_More.html">Learn More</a></li>
 						<li><a href="My_Experience.html">My Experience</a></li>
-						<li><a href="Contact.html">Contact</a></li>
+						
 					</ul>
 				</nav>
 			</div>
@@ -163,6 +184,9 @@ h2{
 				</header>
 				<p>This is <strong>Far Beyond</strong>, a site created by CUHK student, Yuanyuan Ding </p>
 					<p> This is all about university things in the U.S. and UK, hope you will enjoy!</p>
+					<button type="button" class="btn btn-warning" onclick="myFunction()" onmouseover="" style="cursor: pointer;">Consult Me</button>
+					<p id="contact" style="padding-top:20px"></p>
+
 			<hr/>
 			<section id="explore"><a href='https://dingyuanyuan2015.github.io/' target='_blank'></a></section>
 			<div class="row">
@@ -265,3 +289,10 @@ h2{
 
 	</body>
 </html>
+
+<script>
+function myFunction() {
+document.getElementById("contact").innerHTML = "<span class='size'>Tel:(+852)60464945<br> Email:reneeooo95@gmail.com</span>";
+
+}
+</script>
