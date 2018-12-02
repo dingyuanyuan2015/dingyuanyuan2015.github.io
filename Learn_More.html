@@ -83,6 +83,30 @@
 }
 
 
+.collapsible {
+		background-color: #777;
+		color: white;
+		cursor: pointer;
+		padding: 30px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 20px;
+}
+
+.active, .collapsible:hover {
+		background-color: #555;
+}
+
+.content {
+		padding: 0 18px;
+		display: none;
+		overflow: hidden;
+		background-color: #f1f1f1;
+}
+
+
 
 
 
@@ -117,67 +141,13 @@
 	<!-- Header -->
 
 	<!-- Main -->
-	<div id="main">
-		<div class="container">
-			<div class="row">
-				<section class="data_grid_area section-padding-80">
-			          <div class="container">
-			              <div class="row">
-			                  <div class="col-12 col-md-4 col-lg-3">
-			                      <div class="data_sidebar_area">
 
-			                        <!-- ##### Single Widget ##### -->
-			                        <div class="widget catagory mb-50">
-			                            <!-- Widget Title -->
-			                            <h6 class="widget-title mb-30" style="font-size: 30px">Datasets</h6>
-
-			                            <!--  Catagories  -->
-			                            <div class="catagories-menu">
-			                                <ul id="menu-content2" class="menu-content collapse show">
-			                                  <!-- Single Item -->
-			                                  <li data-toggle="collapse" data-target="#container">
-			                                      <a id="allbtn" href="#narrow" style="font-size: 19px"> Ranking/Subject/Tuition Tables</a>
-			                                  </li>
-			                                    <!-- Single Item -->
-			                                    <li data-toggle="collapse" data-target="#ranking">
-			                                        <a id="musicbtn" href="#container" style="font-size: 19px"> Average Ranking Comparison By Region (2018-2019)</a>
-			                                    </li>
-
-
-																					<li data-toggle="collapse" data-target="#comparison">
-			                                        <a id="musicbtn" href="#container1" style="font-size: 19px">Average Tution Comparison</a>
-			                                    </li>
-
-																					<li data-toggle="collapse" data-target="#comparison">
-			                                        <a id="musicbtn" href="#container2"style="font-size: 19px"> Average Ranking Change (2018-2019)</a>
-			                                    </li>
-
-
-																				</ul>
-													</div>
-											</div>
-
-
-										</div>
-								</div>
-
-
-								<div class="battle" ><img src="https://dl.airtable.com/Ql0buqmvSjy8uQWxekxT_battle.jpeg" style="height:250px;width:870px; border-radius:12px" /> </div>
-							</section>
-
-
-
-								 <div id="content" class="8u skel-cell-important">
-								   <section>
-								   <header>
-
-
-								    </header>
-								    	<br /><br/>
+	<button class="collapsible" >Ranking/Subject/Tuition Tables</button>
+	<div class="content">
 
 
 								    	<div class="container">
-								    		<div id="narrow" style="margin-left:-35px;margin-right:5px" >
+								    		<div id="narrow" style="margin-left:-10px;margin-right:5px" >
 								    			<table id="data-table"  class="table table-bordered ">
 								    			<thead>
 								           <tr>
@@ -205,11 +175,18 @@
 								    							<div id="chart"></div>
 								    				 </div>
 								    			 </div>
-								    				 <div id="content" class="container">
-								    					 <section>
+												 </div>
+																 <button class="collapsible" >Average Ranking Comparison By Region (2018-2019)</button>
+										            <div class="content">
 
 								    						 <div id="container" style="width: 1200px; height: 400px; margin: 0 auto"></div>
+															 </div>
+															 <button class="collapsible" >Average Tution Comparison</button>
+															 <div class="content">
 																  <div id="container1" style="width: 1200px;  height: 400px; margin:0 auto"></div>
+																</div>
+																<button class="collapsible" >Average Ranking Change (2018-2019)</button>
+																<div class="content">
 																 <div id="container2" style="min-width: 1200px; height: 400px; margin: 0 auto"></div>
 																 <table id="datatable" >
 																	<thead>
@@ -294,7 +271,7 @@
 						 <td>48</td>
 						 <td>49</td>
 				 </tr>
-
+</div>
 
 
 
@@ -575,3 +552,20 @@ function scrollFunction() {
 
 
 								    				</script>
+
+														<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
