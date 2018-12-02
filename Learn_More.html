@@ -18,6 +18,9 @@
 		<script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script src="https://code.highcharts.com/modules/data.js"></script>
+
     <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
@@ -83,6 +86,8 @@
 
 
 
+
+
 		</style>
 	</head>
 	<body>
@@ -136,12 +141,16 @@
 			                                  </li>
 			                                    <!-- Single Item -->
 			                                    <li data-toggle="collapse" data-target="#ranking">
-			                                        <a id="musicbtn" href="#container">2019/2018 Average Ranking Comparison By Region</a>
+			                                        <a id="musicbtn" href="#container"> Average Ranking Comparison By Region (2018-2019)</a>
 			                                    </li>
 
 
 																					<li data-toggle="collapse" data-target="#comparison">
 			                                        <a id="musicbtn" href="#container1">Average Tution Comparison</a>
+			                                    </li>
+
+																					<li data-toggle="collapse" data-target="#comparison">
+			                                        <a id="musicbtn" href="#container2"> Average Ranking Change (2018-2019)</a>
 			                                    </li>
 
 
@@ -200,8 +209,105 @@
 								    				 <div id="content" class="container">
 								    					 <section>
 
-								    						 <div id="container" style="width: 1050px; height: 400px; margin: 0 auto"></div>
-																  <div id="container1" style="width: 1050px;  height: 400px; margin:0 auto"></div>
+								    						 <div id="container" style="width: 1200px; height: 400px; margin: 0 auto"></div>
+																  <div id="container1" style="width: 1200px;  height: 400px; margin:0 auto"></div>
+																 <div id="container2" style="min-width: 1200px; height: 400px; margin: 0 auto"></div>
+																 <table id="datatable" >
+																	<thead>
+				 <tr>
+						 <th></th>
+						 <th>2019</th>
+						 <th>2018</th>
+				 </tr>
+		 </thead>
+		<tbody>
+
+			<tr>
+					<th>MIT</th>
+					<td>2</td>
+					<td>3</td>
+			</tr>
+				 <tr>
+						 <th>California Institute of Technology</th>
+						 <td>5</td>
+						 <td>4</td>
+				 </tr>
+
+				<tr>
+						 <th>Yale University</th>
+						 <td>11</td>
+						 <td>13</td>
+				 </tr>
+
+				<tr>
+						 <th>Imperial College London</th>
+						 <td>12</td>
+						 <td>11</td>
+				 </tr>
+
+				<tr>
+						 <th>Johns Hopkins University</th>
+						 <td>15</td>
+						 <td>13</td>
+				 </tr>
+
+				<tr>
+						 <th>University of California, Berkeley</th>
+						 <td>15</td>
+						 <td>16</td>
+				 </tr>
+
+				<tr>
+					 <th>University of Michigan</th>
+					 <td>19</td>
+					 <td>20</td>
+			 </tr>
+
+					<tr>
+							<th>Duke University</th>
+							<td>22</td>
+							<td>20</td>
+					</tr>
+
+
+
+
+			 <tr>
+					<th>The University of Edinburgh</th>
+					<td>25</td>
+					<td>27</td>
+			</tr>
+
+
+
+				 <tr>
+						 <th>King's College London</th>
+						 <td>36</td>
+						 <td>33</td>
+				 </tr>
+
+
+
+
+
+				 <tr>
+						 <th>The University of Manchester</th>
+						 <td>48</td>
+						 <td>49</td>
+				 </tr>
+
+
+
+
+
+
+ </tbody>
+
+ </table>
+
+
+
+
 
 
 								    					 </section>
@@ -277,12 +383,43 @@
 								    	</script>
 
 
+											<script>
+										var chart2 =	Highcharts.chart('container2', {
+           data: {
+         table: 'datatable'
+      },
+       chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Universities with Average Ranking Change'
+    },
+    yAxis: {
+        allowDecimals: false,
+        title: {
+            text: 'Ranking'
+        }
+    },
+    tooltip: {
+			formatter: function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+                this.point.y + ' ' ;
+        }
+    }
+});
+
+    </script>
+
+
+
+
+
 
 
 
 
 								    	<script>
-								    			var chart2 = Highcharts.chart('container1', {
+								    			var chart3 = Highcharts.chart('container1', {
 								    			 chart: {
 								    					 type: 'line'
 								    			 },
