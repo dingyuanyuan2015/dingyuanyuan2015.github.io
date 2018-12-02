@@ -102,6 +102,28 @@ img.hover-shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#myBtn {
+display: none;
+position: fixed;
+bottom: 20px;
+right: 30px;
+z-index: 99;
+font-size: 18px;
+border: none;
+outline: none;
+background-color: LightSlateGrey;
+color: white;
+cursor: pointer;
+padding: 15px;
+border-radius: 4px;
+font-family: Times;
+}
+
+#myBtn:hover {
+background-color: #555;
+}
+
+
 
 
 
@@ -123,7 +145,7 @@ img.hover-shadow {
 						<li><a href="Learn_More.html">Learn More</a></li>
 
 						<li><a href="My_Experience.html">My Experience</a></li>
-						
+
 					</ul>
 				</nav>
 			</div>
@@ -510,7 +532,25 @@ img.hover-shadow {
 				</section>
 			</div>
 		</div>
-	<!-- /Footer -->
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+		<script>
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+		document.getElementById("myBtn").style.display = "block";
+		} else {
+		document.getElementById("myBtn").style.display = "none";
+		}
+		}
+
+		function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+		}
+		</script>
+
 
 
 
