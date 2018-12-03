@@ -10,10 +10,7 @@
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Times:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
+
 		<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -22,6 +19,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
 <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="js/skel.min.js"></script>
+<script src="js/skel-panels.min.js"></script>
+<script src="js/init.js"></script>
 </script>
 <noscript>
 <link rel="stylesheet" href="css/skel-noscript.css" />
@@ -165,8 +167,8 @@
 
 
 		.airtable-embed {
-			height:440px;
-			margin-top: -32px;
+			height:528px;
+			margin-bottom: 20px;
 		}
 
 
@@ -249,9 +251,10 @@
 		#myBtn:hover {
 		background-color: #555;
 		}
- h2{
-	 padding-top: 50px;
- }
+
+		h2{
+			padding-top: 20px;
+		}
 
 
 
@@ -433,95 +436,102 @@
  <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 
+<div id="main">
+			<div class="container">
+				<div class="row">
 
+	<div id="content" class="8u skel-cell-important">
+						<section>
 
-<div class="container1">
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-12">
+							<button type="button" class="btn btn-warning" id='roll_up' style="margin-bottom:15px" onclick="Track_My_Journey();">Track My Journey</button>
+							<br>
+							<div id="map" style="width: 100%; height:440px;border:1px solid #AAA;"></div>
+							   <script>
+							 var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,})
+							  var map = L.map('map')
+							        .addLayer(mapboxTiles)
+							        .setView([40.915000, -73.124000], 4);
 
-	<button type="button" class="btn btn-warning" id='roll_up' style="margin-bottom:15px" onclick="Track_My_Journey();">Track My Journey</button>
-	<br>
-<div id="map" style="max-width: 780px; height:440px;border:1px solid #AAA;margin:0 auto;"></div>
-		 <script>
-   var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,})
-    var map = L.map('map')
-          .addLayer(mapboxTiles)
-					.setView([40.915000, -73.124000], 4);
+							    var planeIcon = L.icon ({
+							      iconUrl:'https://dl.airtable.com/ifhRzgTSSSK873s0YmS5_%E5%9B%BE%E5%B1%82%201.png',
+							      iconSize:     [25, 25],
+							       popupAnchor:  [0, -15]
+							    });
 
-			var planeIcon = L.icon ({
-				iconUrl:'https://dl.airtable.com/ifhRzgTSSSK873s0YmS5_%E5%9B%BE%E5%B1%82%201.png',
-				iconSize:     [25, 25],
-				 popupAnchor:  [0, -15]
-			});
+							     var data=[];
+							        var items = [];
+							        var airtable_read_endpoint = "https://api.airtable.com/v0/appIh6e1Vbxi7u4lI/map?api_key=keypXm0HHxjEx6JHg&maxRecords=12&view=Grid%20view"
+							        $.getJSON(airtable_read_endpoint, function(result) {
+							         $.each(result.records, function(key,value) {
+							             items = {};
+							                 items["name"] = value.fields.Name;
+							                 items["url"] = value.fields.url;
+							                 items["latitud"] = value.fields.Lat;
+							                 items["longitud"] = value.fields.Lng;
+							                 data.push(items);
+							                 console.log(items);
+							          }); // end .each
+							  }); // end getJSON
 
-       var data=[];
-					var items = [];
-			    var airtable_read_endpoint = "https://api.airtable.com/v0/appIh6e1Vbxi7u4lI/map?api_key=keypXm0HHxjEx6JHg&maxRecords=12&view=Grid%20view"
-					$.getJSON(airtable_read_endpoint, function(result) {
-           $.each(result.records, function(key,value) {
-               items = {};
-                   items["name"] = value.fields.Name;
-                   items["url"] = value.fields.url;
-                   items["latitud"] = value.fields.Lat;
-                   items["longitud"] = value.fields.Lng;
-                   data.push(items);
-                   console.log(items);
-            }); // end .each
-    }); // end getJSON
+							</script>
 
-</script>
+							<script>
+							function Track_My_Journey(){
+							for (var i in data) {
+							     var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
+							    L.marker( latlng ,{icon:planeIcon})
+							       .bindPopup( '<a href="' + data[i].url + '" target="_blank">'+data[i].name + '</a>' )
+							        .addTo(map);
 
-<script>
-function Track_My_Journey(){
-  for (var i in data) {
-       var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
-      L.marker( latlng ,{icon:planeIcon})
-			   .bindPopup( '<a href="' + data[i].url + '" target="_blank">'+data[i].name + '</a>' )
-          .addTo(map);
-
-  }
-}
-</script>
-
-
-
-	 </div>
- </div>
-</div>
+							}
+							}
+							</script>
 
 
 
-</section>
-</div>
+							 </div>
+							</div>
+							</div>
 
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+						</section>
+					</div>
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-</script>
+					<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+
+					function plusSlides(n) {
+					showSlides(slideIndex += n);
+					}
+
+					function currentSlide(n) {
+					showSlides(slideIndex = n);
+					}
+
+					function showSlides(n) {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("dot");
+					if (n > slides.length) {slideIndex = 1}
+					if (n < 1) {slideIndex = slides.length}
+					for (i = 0; i < slides.length; i++) {
+					    slides[i].style.display = "none";
+					}
+					for (i = 0; i < dots.length; i++) {
+					    dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " active";
+					}
+					</script>
+
+
+
+
+
+
 
 
 
