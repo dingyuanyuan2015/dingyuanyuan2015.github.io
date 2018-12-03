@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+
+<html>
+	<style>
+  body, html {
+      height: 100%;
+      margin: 0;
+  }
+
+  .bgimg {
+      background-image: url('university.jpg');
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      color: white;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 25px;
+  }
+
+
+
+  .bottomleft {
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      margin-left: 560px;
+      margin-bottom: 200px;
+  }
+
+  .middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    
+  }
+
+  hr {
+      margin: auto;
+      width: 40%;
+  }
+
+
+
+  .myButton {
+	-moz-box-shadow: 3px 4px 0px 0px #899599;
+	-webkit-box-shadow: 3px 4px 0px 0px #899599;
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:grey;
+	background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-webkit-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-o-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-ms-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bab1ba',GradientType=0);
+	background-color:#ededed;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3e7f8f;
+	font-family:"Courier New", Courier, monospace;
+  font-weight: bold;
+	font-size:20px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+
+}
+.myButton:hover {
+	background:grey;
+	background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
+	background-color:#bab1ba;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+  </style>
+  <body>
+
+  <div class="bgimg">
+
+    <div class="middle">
+      <h1>COMING SOON</h1>
+      <hr>
+      <p id="demo" style="font-size:30px"></p>
+    </div>
+    <div class="bottomleft">
+    <a href="index.html" class="myButton">Start</a>
+    </div>
+  </div>
+
+  <script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Sep 1, 2019 00:00:00").getTime();
+
+  // Update the count down every 1 second
+  var countdownfunction = setInterval(function() {
+
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now an the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in an element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // If the count down is over, write some text
+      if (distance < 0) {
+          clearInterval(countdownfunction);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+  }, 1000);
+  </script>
+
+  </body>
+  </html>
