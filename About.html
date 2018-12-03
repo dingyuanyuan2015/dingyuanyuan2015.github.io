@@ -5,6 +5,8 @@
 	<head>
 		<title>About</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,11 +23,13 @@
 		</noscript>
 		<style>
 		div.gallery {
-    margin: 5px;
-		border: 1px;
-		float:left;
-    width: 113px;
-		position: static;
+
+			margin: 5px;
+			border: 1px;
+			float:left;
+			width: 113px;
+			position: static;
+
 
 }
 
@@ -42,6 +46,26 @@ div.desc {
 		font-size: 10px;
 
 }
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
 
 .flip-box {
   background-color: transparent;
@@ -249,13 +273,13 @@ background-color: #555;
 									<span class="byline">Discover the oldest to the newest</span>
                  </header>
 
-
+              
 								 <div class="gallery">
 
                  <a href="http://www.ox.ac.uk/">
 
 
-                <img src ="https://dl.airtable.com/zoElUnIZSvuaztjrkmDn_Screen%20Shot%202018-11-20%20at%201.02.01%20AM.png"  class="img-responsive  hover-shadow cursor">
+                <img src ="https://dl.airtable.com/zoElUnIZSvuaztjrkmDn_Screen%20Shot%202018-11-20%20at%201.02.01%20AM.png"  class="img-responsive hover-shadow cursor">
 
 									</a>
 							      <div class="desc"> University of Oxford </br>
@@ -280,6 +304,8 @@ background-color: #555;
 						Acceptance Rate: 20.3% </br>
 						</div>
 						</div>
+
+
 
 						<div class="gallery">
 						<a href="https://www.ed.ac.uk/ ">
@@ -456,6 +482,12 @@ background-color: #555;
 																Acceptance Rate: 13.0% <br>
 																</div>
 															</div>
+
+
+
+
+
+
 
 
 
