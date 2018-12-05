@@ -142,7 +142,7 @@
 
 	/* On smaller screens, decrease text size */
 	@media only all and (max-width: 360px) {
-	  .prev, .next,.text, .map {font-size: 11px}
+	  .prev, .next,.text {font-size: 11px}
 
 	}
 
@@ -166,10 +166,7 @@
 
 
 
-		.airtable-embed {
-			height:528px;
-			margin-bottom: 20px;
-		}
+
 
 
 		.scroll-down {
@@ -251,10 +248,10 @@
 		#myBtn:hover {
 		background-color: #555;
 		}
+h2{
+	padding-top: 20px;
+}
 
-		h2{
-			padding-top: 20px;
-		}
 
 
 
@@ -437,15 +434,20 @@
 </div>
 
 <div id="main">
-			<div class="container">
-				<div class="row">
+<div>
 
-	<div id="content" class="8u skel-cell-important">
+	<div class="row">
+
+
+
+	<div id="content" class="12u skel-cell-important">
 						<section>
 
 							<button type="button" class="btn btn-warning" id='roll_up' style="margin-bottom:15px" onclick="Track_My_Journey();">Track My Journey</button>
 							<br>
+
 							<div id="map" style="width: 100%; height:440px;border:1px solid #AAA;"></div>
+
 							   <script>
 							 var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,})
 							  var map = L.map('map')
@@ -491,7 +493,7 @@
 
 							 </div>
 							</div>
-							</div>
+
 
 
 
@@ -576,21 +578,24 @@
 
 							</header>
 							<section id="form"><a href='https://dingyuanyuan2015.github.io/' target='_blank'></a></section>
-							<ul class="style">
 
 
 
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/shrIhuXl3Z1Qd4eRh?backgroundColor=red" frameborder="0" onmousewheel="" width="100%"  style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrIhuXl3Z1Qd4eRh?backgroundColor=red" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</section>
 
 
-							</ul>
-						</section>
 					</div>
 
+
 				</div>
+
 			</div>
+
 		</div>
+
 	<!-- /Main -->
 
 	<!-- Tweet -->
